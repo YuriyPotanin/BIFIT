@@ -1,0 +1,44 @@
+div(ng-controller='cartCtrl as cart')
+	.row
+		.col-sm-12
+			.row
+				.col-sm-3.col-sm-offset-9.nav(ng-click="cart.goToStore()")
+					.shopBottum
+					sapn.navText Back to shop
+	.row
+		.col-sm-12
+			.itemContainer(ng-if="cart.cartItem.length == 0") 
+				.text-center.emtyCart Your cart is empty
+			.card(ng-repeat = "item in cart.cartItem track by $index")
+				img(ng-src = "{{item.img}}")
+				h4.description {{item.title}}
+				.description.text-right {{item.price}} UAH
+				.deleteFromCart.text-center(ng-click ="cart.deleteFromCart(item.id)") Delet
+	.row
+		.col-sm-12
+			psan.pull-right.totalCost Total cost: {{cart.totalCost()}} UAH
+	.row
+		.col-md-6.col-sm-12
+			.row
+				.col-sm-12
+					input(type="text" class="cartForm" placeholder = "Name" ng-model ="cart.name")
+			.row
+				.col-sm-12
+					input(type="text" class="cartForm" placeholder = "Phone number" ng-model ="cart.phone")
+			.row
+				.col-sm-12
+					input(type="text" class="cartForm" placeholder = "Email" ng-model ="cart.email")
+			.row
+				.col-sm-12
+					input(type="text" class="cartForm" placeholder = "Comment" ng-model ="cart.comment")
+			.row
+				.col-sm-12
+					button(type="submit" class="btn btn-default pull-right" ng-click="cart.submit()" ) Submit
+	.errorContainer
+		.errorCnfirm(ng-repeat = "err in cart.error track by $index" ng-class ="{'hideModal': cart.hideModalClass}" ng-if="cart.error.length !== 0") 
+			span.alertText {{err}}
+		.successCnfirm( ng-class ="{'hideModal': cart.hideModalClass}" ng-if = "cart.successText") 
+			span.alertText {{cart.successText}}
+
+	
+

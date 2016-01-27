@@ -1,0 +1,110 @@
+.card
+	display: inline-block
+	-webkit-box-shadow: -4px 7px 20px 0px rgba(191,191,191,0.41);
+	-moz-box-shadow: -4px 7px 20px 0px rgba(191,191,191,0.41);
+	box-shadow: -4px 7px 20px 0px rgba(191,191,191,0.41);
+	width: 244px
+	min-height:350px
+	margin: 15px
+
+.nav
+	&:hover
+		cursor pointer
+	
+.cartBottum
+	display inline-block
+	float left 
+	margin-top:10px
+	width:30px
+	height:30px
+	background-image: url('/img/marker20.png')
+	background-size: cover
+	
+.shopBottum
+	display inline-block
+	float left 
+	margin-top:10px
+	width:30px
+	height:30px
+	background-image: url('/img/shop.png')
+	background-size: cover
+
+.navText
+	margin-left 10px
+	font-size 27px
+
+.description
+	padding: 0 15px
+	
+.addToCart
+	margin-top: 15px
+	padding: 10px
+	border-top: 2px solid black
+	&:hover
+		cursor: pointer
+		background-color: #42EB13
+
+.deleteFromCart
+	margin-top: 15px
+	padding: 10px
+	border-top: 2px solid black
+	&:hover
+		cursor: pointer
+		background-color: #EBA013
+
+.cartForm
+	width 100%
+	margin-bottom 20px
+	border-width 0 0 2px 0
+	&:focus
+		outline: none;
+		
+.itemContainer
+	min-height 300px !important
+	
+.emtyCart
+	font-size: 7em;
+	color: darkgray;
+.totalCost
+		font-size: 2em;
+
+.errorContainer
+	position: fixed;
+	top: 10px;
+	right: 10px;
+
+.errorCnfirm
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 0px solid #000;
+	width: 350px;
+	height: 90px;
+	margin: 10px;
+	border-radius: 21px;
+	background-color: rgb(239, 60, 0);
+	opacity 1
+	transition 3s
+
+.successCnfirm{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 0px solid #000;
+	width: 350px;
+	height: 90px;
+	margin: 10px;
+	border-radius: 21px;
+	background-color: rgb(80, 240, 0);
+	opacity 1
+	transition 3s
+}
+
+.alertText
+	font-size: 25px;	
+	
+.hideModal{
+	opacity 0
+	background-color rgb(239, 60, 0);
+	transition 3s
+}

@@ -1,0 +1,15 @@
+div(ng-controller='storeCtrl as store')
+	.row
+		.col-sm-12
+			.row
+				.col-sm-3.col-sm-offset-9.nav(ng-click="store.goToCart()")
+					.cartBottum
+					sapn.navText Go to cart
+	.row
+		.col-sm-12
+			.card(ng-repeat = "item in store.storeItem")
+				img(ng-src = "{{item.img}}")
+				h4.description {{item.title}}
+				.description.text-right {{item.price}} UAH
+				.addToCart.text-center(ng-click = "store.addToCart(item)") Add to cart
+
